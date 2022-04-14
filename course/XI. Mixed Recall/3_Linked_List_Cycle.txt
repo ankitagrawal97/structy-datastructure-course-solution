@@ -1,0 +1,75 @@
+Write a function, linkedListCycle, that takes in the head of a linked list as an argument. The function should return a boolean indicating whether or not the linked list contains a cycle.
+
+test_00:
+Node a("a");
+Node b("b");
+Node c("c");
+Node d("d");
+
+a.next = &b;
+b.next = &c;
+c.next = &d;
+d.next = &b; // cycle
+
+//         _______
+//       /        \
+// a -> b -> c -> d 
+
+linkedListCycle(&a);  // 1 (true)
+test_01:
+Node q("q");
+Node r("r");
+Node s("s");
+Node t("t");
+Node u("u");
+
+q.next = &r;
+r.next = &s;
+s.next = &t;
+t.next = &u;
+u.next = &q; // cycle
+
+//    ________________
+//  /                 \
+// q -> r -> s -> t -> u 
+
+linkedListCycle(&q);  // 1 (true)
+test_02
+Node a("a");
+Node b("b");
+Node c("c");
+Node d("d");
+
+a.next = &b;
+b.next = &c;
+c.next = &d;
+
+// a -> b -> c -> d 
+
+linkedListCycle(&a);  // 0 (false)
+test_03:
+Node q("q");
+Node r("r");
+Node s("s");
+Node t("t");
+Node u("u");
+
+q.next = &r;
+r.next = &s;
+s.next = &t;
+t.next = &u;
+u.next = &t; // cycle
+
+//                   __
+//                 /   \
+// q -> r -> s -> t -> u 
+
+linkedListCycle(&q);  // 1 (true)
+test_04:
+Node p("p");
+
+// p
+
+linkedListCycle(&p); // 0 (false)
+test_05:
+linkedListCycle(nullptr); // 0 (false)
