@@ -1,0 +1,73 @@
+Write a function, linkedPalindrome, that takes in the head of a linked list as an argument. The function should return a boolean indicating whether or not the linked list is a palindrome. A palindrome is a sequence that is the same both forwards and backwards.
+
+test_00:
+Node a(3);
+Node b(2);
+Node c(7);
+Node d(7);
+Node e(2);
+Node f(3);
+
+a.next = &b;
+b.next = &c;
+c.next = &d;
+d.next = &e;
+e.next = &f;
+
+// 3 -> 2 -> 7 -> 7 -> 2 -> 3
+linkedPalindrome(&a); // 1 (true)
+test_01:
+Node a(3);
+Node b(2);
+Node c(4);
+
+a.next = &b;
+b.next = &c;
+
+// 3 -> 2 -> 4
+linkedPalindrome(&a); // 0 (false)
+test_02:
+Node a(3);
+Node b(2);
+Node c(3);
+
+a.next = &b;
+b.next = &c;
+
+// 3 -> 2 -> 3
+linkedPalindrome(&a); // 1 (true)
+test_03:
+Node a(0);
+Node b(1);
+Node c(0);
+Node d(1);
+Node e(0);
+
+a.next = &b;
+b.next = &c;
+c.next = &d;
+d.next = &e;
+
+// 0 -> 1 -> 0 -> 1 -> 0
+linkedPalindrome(&a); // 1 (true)
+test_04:
+Node a(0);
+Node b(1);
+Node c(0);
+Node d(1);
+Node e(1);
+
+a.next = &b;
+b.next = &c;
+c.next = &d;
+d.next = &e;
+
+// 0 -> 1 -> 0 -> 1 -> 1
+linkedPalindrome(&a); // 0 (false)
+test_05:
+Node a(5);
+
+// 5
+linkedPalindrome(&a); // 1 (true)
+test_06:
+linkedPalindrome(nullptr); // 1 (true)
