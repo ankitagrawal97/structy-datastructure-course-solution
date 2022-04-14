@@ -1,0 +1,76 @@
+Write a function, lowestCommonAncestor, that takes in the root of a binary tree and two values. The function should return the value of the lowest common ancestor of the two values in the tree.
+
+You may assume that the tree values are unique and the tree is non-empty.
+
+Note that a node may be considered an ancestor of itself.
+
+example tree
+Node a("a");
+Node b("b");
+Node c("c");
+Node d("d");
+Node e("e");
+Node f("f");
+Node g("g");
+Node h("h");
+
+a.left = &b;
+a.right = &c;
+b.left = &d;
+b.right = &e;
+c.right = &f;
+e.left = &g;
+e.right = &h;
+
+//      a
+//    /    \
+//   b      c
+//  / \      \
+// d   e      f
+//    / \
+//    g  h
+test_00
+lowestCommonAncestor(&a, "d", "h"); // b
+test_01
+lowestCommonAncestor(&a, "d", "g"); // b
+test_02
+lowestCommonAncestor(&a, "g", "c"); // a
+test_03
+lowestCommonAncestor(&a, "b", "g"); // b
+test_04
+lowestCommonAncestor(&a, "f", "c"); // c
+example tree
+Node l("l");
+Node m("m");
+Node n("n");
+Node o("o");
+Node p("p");
+Node q("q");
+Node r("r");
+Node s("s");
+Node t("t");
+
+l.left = &m;
+l.right = &n;
+n.left = &o;
+n.right = &p;
+o.left = &q;
+o.right = &r;
+p.left = &s;
+p.right = &t;
+
+//        l
+//     /     \
+//    m       n
+//         /    \
+//         o     p
+//        / \   / \
+//       q   r s   t
+test_05
+lowestCommonAncestor(&l, "r", "p"); // n
+test_06
+lowestCommonAncestor(&l, "m", "o"); // l
+test_07
+lowestCommonAncestor(&l, "t", "q"); // n
+test_08
+lowestCommonAncestor(&l, "s", "p"); // p
