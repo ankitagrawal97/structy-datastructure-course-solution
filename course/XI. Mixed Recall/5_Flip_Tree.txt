@@ -1,0 +1,122 @@
+Write a function, flipTree, that takes in the root of a binary tree. The function should flip the binary tree, turning left subtrees into right subtrees and vice-versa. This flipping should occur in-place by modifying the original tree. The function should return the root of the tree.
+
+test_00
+Node a("a");
+Node b("b");
+Node c("c");
+Node d("d");
+Node e("e");
+Node f("f");
+Node g("g");
+Node h("h");
+
+a.left = &b;
+a.right = &c;
+b.left = &d;
+b.right = &e;
+c.right = &f;
+e.left = &g;
+e.right = &h;
+
+//      a
+//    /    \
+//   b      c
+//  / \      \
+// d   e      f
+//    / \
+//    g  h
+
+flipTree(&a); 
+
+//       a
+//    /    \
+//   c      b
+//  /     /   \
+// f     e    d
+//     /  \
+//    h    g
+test_01
+Node u("u");
+Node t("t");
+Node s("s");
+Node r("r");
+Node q("q");
+Node p("p");
+
+u.left = &t;
+u.right = &s;
+s.right = &r;
+r.left = &q;
+r.right = &p;
+
+//     u
+//  /    \
+// t      s
+//         \
+//         r
+//        / \
+//        q  p
+
+flipTree(&u);
+
+//           u
+//        /    \
+//       s      t
+//      /
+//     r
+//    / \
+//   p  q
+test_02
+Node l("l");
+Node m("m");
+Node n("n");
+Node o("o");
+Node p("p");
+Node q("q");
+Node r("r");
+Node s("s");
+Node t("t");
+
+l.left = &m;
+l.right = &n;
+n.left = &o;
+n.right = &p;
+o.left = &q;
+o.right = &r;
+p.left = &s;
+p.right = &t;
+
+//        l
+//     /     \
+//    m       n
+//         /    \
+//         o     p
+//        / \   / \
+//       q   r s   t
+
+flipTree(&l);
+
+//             l
+//         /      \
+//        n        m
+//      /  \
+//    p     o
+//  / \    / \
+// t   s  r   q
+test_03
+Node n("n");
+Node y("y");
+Node c("c");
+
+n.left = &y;
+n.right = &c;
+
+//       n
+//     /   \
+//    y     c
+
+flipTree(&n);
+
+//       n
+//     /   \
+//    c     y
