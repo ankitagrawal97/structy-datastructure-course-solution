@@ -1,0 +1,113 @@
+Write a function, leftyNodes, that takes in the root of a binary tree. The function should return an vector containing the left-most value on every level of the tree. The vector must be ordered in a top-down fashion where the root is the first element.
+
+test_00
+Node a("a");
+Node b("b");
+Node c("c");
+Node d("d");
+Node e("e");
+Node f("f");
+Node g("g");
+Node h("h");
+
+a.left = &b;
+a.right = &c;
+b.left = &d;
+b.right = &e;
+c.right = &f;
+e.left = &g;
+e.right = &h;
+
+//      a
+//    /    \
+//   b      c
+//  / \      \
+// d   e      f
+//    / \
+//    g  h
+
+leftyNodes(&a); // [ "a", "b", "d", "g" ]
+test_01
+Node u("u");
+Node t("t");
+Node s("s");
+Node r("r");
+Node q("q");
+Node p("p");
+
+u.left = &t;
+u.right = &s;
+s.right = &r;
+r.left = &q;
+r.right = &p;
+
+//     u
+//  /    \
+// t      s
+//         \
+//         r
+//        / \
+//        q  p
+
+leftyNodes(&u); // [ "u", "t", "r", "q" ]
+test_02
+Node l("l");
+Node m("m");
+Node n("n");
+Node o("o");
+Node p("p");
+Node q("q");
+Node r("r");
+Node s("s");
+Node t("t");
+
+l.left = &m;
+l.right = &n;
+n.left = &o;
+n.right = &p;
+o.left = &q;
+o.right = &r;
+p.left = &s;
+p.right = &t;
+
+//        l
+//     /     \
+//    m       n
+//         /    \
+//         o     p
+//        / \   / \
+//       q   r s   t
+
+leftyNodes(&l); // [ "l", "m", "o", "q" ]
+test_03
+Node n("n");
+Node y("y");
+Node c("c");
+
+n.left = &y;
+n.right = &c;
+
+//       n
+//     /   \
+//    y     c
+
+leftyNodes(&n); // [ "n", "y" ]
+test_04
+Node i("i");
+Node n("n");
+Node s("s");
+Node t("t");
+
+i.right = &n;
+n.left = &s;
+n.right = &t;
+
+//       i
+//        \
+//         n
+//        / \
+//       s   t
+
+leftyNodes(&i); // [ "i", "n", "s" ]
+test_05
+leftyNodes(nullptr); // [ ]
