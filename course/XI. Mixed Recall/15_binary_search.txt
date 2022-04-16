@@ -1,0 +1,25 @@
+binary search
+Write a function, binarySearch, that takes in a sorted vector of numbers and a target. The function should return the index where the target can be found within the vector. If the target is not found in the vector, then return -1.
+
+You may assume that the input vector contains unique numbers sorted in increasing order.
+
+Your function must implement the binary search algorithm.
+
+test_00
+binarySearch(std::vector<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8 }, 6); // -> 6
+test_01
+binarySearch(std::vector<int> { 0, 6, 8, 12, 16, 19, 20, 24, 28 }, 27); // -> -1
+test_02
+binarySearch(std::vector<int> { 0, 6, 8, 12, 16, 19, 20, 28 }, 8); // -> 2
+test_03
+binarySearch(std::vector<int> { 0, 6, 8, 12, 16, 19, 20, 24, 28 }, 28); // -> 8
+test_04
+binarySearch(std::vector<int> { 7, 9 }, 7); // -> 0
+test_05
+binarySearch(std::vector<int> { 7, 9 }, 9); // -> 1
+test_06
+binarySearch(std::vector<int> { 7, 9 }, 12); // -> -1
+test_07
+binarySearch(std::vector<int> { 7 }, 7); // -> 0
+test_08
+binarySearch(std::vector<int> {  }, 7); // -> -1
