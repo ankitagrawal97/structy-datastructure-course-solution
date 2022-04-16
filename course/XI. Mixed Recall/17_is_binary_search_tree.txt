@@ -1,0 +1,116 @@
+is binary search tree
+Write a function, isBinarySearchTree, that takes in the root of a binary tree. The function should return a boolean indicating whether or not the tree satisfies the binary search tree property.
+
+A Binary Search Tree is a binary tree where all values within a node's left subtree are smaller than the node's value and all values in a node's right subtree are greater than or equal to the node's value.
+
+test_00:
+Node a(12);
+Node b(5);
+Node c(18);
+Node d(3);
+Node e(9);
+Node f(19);
+
+a.left = &b;
+a.right = &c;
+b.left = &d;
+b.right = &e;
+c.right = &f;
+
+//      12
+//    /   \
+//   5     18
+//  / \     \
+// 3   9     19
+
+isBinarySearchTree(&a); // -> true
+test_01:
+Node a(12);
+Node b(5);
+Node c(18);
+Node d(3);
+Node e(15);
+Node f(19);
+
+a.left = &b;
+a.right = &c;
+b.left = &d;
+b.right = &e;
+c.right = &f;
+
+//      12
+//    /   \
+//   5     18
+//  / \     \
+// 3   15     19
+
+isBinarySearchTree(&a); // -> false
+test_02:
+Node a(12);
+Node b(5);
+Node c(19);
+Node d(3);
+Node e(9);
+Node f(19);
+
+a.left = &b;
+a.right = &c;
+b.left = &d;
+b.right = &e;
+c.right = &f;
+
+//      12
+//    /   \
+//   5     19
+//  / \     \
+// 3   9     19
+
+isBinarySearchTree(&a); // -> true
+test_03:
+Node a(12);
+Node b(5);
+Node c(10);
+Node d(3);
+Node e(9);
+Node f(19);
+
+a.left = &b;
+a.right = &c;
+b.left = &d;
+b.right = &e;
+c.right = &f;
+
+//      12
+//    /   \
+//   5     10
+//  / \     \
+// 3   9     19
+
+isBinarySearchTree(&a); // -> false
+test_04:
+Node q(54);
+Node r(42);
+Node s(70);
+Node t(31);
+Node u(50);
+Node v(72);
+Node w(47);
+Node x(90);
+
+q.left = &r;
+q.right = &s;
+r.left = &t;
+r.right = &u;
+s.right = &v;
+u.left = &w;
+v.right = &x;
+
+//       54
+//     /    \
+//    42     70
+//   / \      \
+// 31   50     72
+//     /        \
+//    47         90
+
+isBinarySearchTree(&q); // -> true
