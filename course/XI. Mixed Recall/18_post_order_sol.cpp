@@ -20,9 +20,12 @@ void postOrder(Node* root, vector<string> &vals){
   if(!root){
     return;
   }
+  //left
   postOrder(root->left,vals);
+  //right
   postOrder(root->right,vals);
   vals.push_back(root->val);
+  /
 }
 
 std::vector<std::string> postOrder(Node* root) {
