@@ -19,10 +19,11 @@ Node* flipTree(Node* root) {
   if(!root){
     return nullptr;
   }
-  
+  //temp variable
   Node* temp = root->left;
   root->left = root->right;
   root->right = temp;
+  //recursive
   flipTree(root->left);
   flipTree(root->right);
   return root;
