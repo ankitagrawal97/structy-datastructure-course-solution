@@ -1,0 +1,35 @@
+lexical order
+Write a function, lexicalOrder, that takes in 2 words and an alphabet string as an argument. The function should return true if the first word should appear before the second word if lexically-ordered according to the given alphabet order. If the second word should appear first, then return false.
+
+Note that the alphabet string may be any arbitrary string.
+
+Intuitively, Lexical Order is like "dictionary" order:
+
+You can assume that all characters are lowercase a-z.
+
+You can assume that the alphabet contains all 26 letters.
+
+test_00:
+std::string alphabet = "abcdefghijklmnopqrstuvwxyz";
+lexicalOrder("apple", "dock", alphabet); // -> 1 (true)
+test_01:
+std::string alphabet = "abcdefghijklmnopqrstuvwxyz";
+lexicalOrder("apple", "ample", alphabet); // -> 0 (false)
+test_02:
+std::string alphabet = "abcdefghijklmnopqrstuvwxyz";
+lexicalOrder("app", "application", alphabet); // -> 1 (true)
+test_03:
+std::string alphabet = "abcdefghijklmnopqrstuvwxyz";
+lexicalOrder("backs", "backdoor", alphabet); // -> 0 (false)
+test_04:
+std::string alphabet = "ghzstijbacdopnfklmeqrxyuvw";
+lexicalOrder("zoo", "dinner", alphabet); // -> 1 (true)
+test_05:
+std::string alphabet = "ghzstijbacdopnfklmeqrxyuvw";
+lexicalOrder("leaper", "leap", alphabet); // -> 0 (false)
+test_06:
+std::string alphabet = "ghzstijbacdopnfklmeqrxyuvw";
+lexicalOrder("backs", "backdoor", alphabet); // -> 1 (true)
+test_07:
+std::string alphabet = "ghzstijbacdopnfklmeqrxyuvw";
+lexicalOrder("semper", "semper", alphabet); // -> 1 (true)
