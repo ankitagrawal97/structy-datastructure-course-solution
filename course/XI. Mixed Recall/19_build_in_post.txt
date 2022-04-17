@@ -1,0 +1,53 @@
+build tree in post
+Write a function, buildTreeInPost, that takes a vector of in-ordered values a vector of post-ordered values for a binary tree. The function should build a binary tree that has the given in-order and post-order traversal structure. The function should return the root of this tree.
+
+You can assume that the values of inorder and postorder are unique.
+
+Be sure to allocate the nodes of your tree dynamically with the new keyword.
+
+test_00
+buildTreeInPost(
+  std::vector<std::string> { "y", "x", "z" },
+  std::vector<std::string> { "y", "z", "x" } 
+);
+//       x
+//    /    \
+//   y      z
+test_01
+buildTreeInPost(
+  std::vector<std::string> { "d", "b", "e", "a", "f", "c", "g" },
+  std::vector<std::string> { "d", "e", "b", "f", "g", "c", "a" } 
+);
+//      a
+//    /    \
+//   b      c
+//  / \    / \
+// d   e  f   g
+test_02
+buildTreeInPost(
+  std::vector<std::string> { "d", "b", "g", "e", "h", "a", "c", "f" },
+  std::vector<std::string> { "d", "g", "h", "e", "b", "f", "c", "a" } 
+);
+//      a
+//    /    \
+//   b      c
+//  / \      \
+// d   e      f
+//    / \
+//    g  h
+test_03
+buildTreeInPost(
+  std::vector<std::string> {"m", "n"},
+  std::vector<std::string> {"m", "n"}
+);
+//       n
+//     /
+//    m
+test_04
+buildTreeInPost(
+  std::vector<std::string> {"n", "m"},
+  std::vector<std::string> {"m", "n"}
+);
+//     n
+//      \
+//       m
