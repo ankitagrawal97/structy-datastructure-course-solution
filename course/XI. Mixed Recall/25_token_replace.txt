@@ -1,0 +1,50 @@
+token replace
+Write a function, tokenReplace, that takes in an unordered_map of tokens and a string. The function should return a new string where tokens are replaced.
+
+Tokens are enclosed in a pair of "$". You can assume that the input string is properly formatted. Tokens should be replaced from left to right in the string (see test_05).
+
+test_00:
+std::unordered_map<std::string, std::string> tokens {
+  { "$LOCATION$", "park"},
+  { "$ANIMAL$", "dog"}
+};
+tokenReplace("Walk the $ANIMAL$ in the $LOCATION$!", tokens); 
+// -> "Walk the dog in the park!"
+test_01:
+std::unordered_map<std::string, std::string> tokens {
+  { "$ADJECTIVE$", "quick"},
+  { "$VERB$", "hopped"},
+  { "$DIRECTION$", "North"}
+};
+tokenReplace("the $ADJECTIVE$ fox $VERB$ $ADJECTIVE$ly $DIRECTION$ward", tokens); 
+// -> "the quick fox hopped quickly Northward"
+test_02:
+std::unordered_map<std::string, std::string> tokens {
+  { "$greeting$", "hey programmer"}
+};
+tokenReplace("his greeting is always $greeting$.", tokens); 
+// -> "his greeting is always hey programmer."
+test_03:
+std::unordered_map<std::string, std::string> tokens {
+  { "$A$", "lions"},
+  { "$B$", "tigers"},
+  { "$C$", "bears"}
+};
+tokenReplace("$A$$B$$C$, oh my.", tokens); 
+// -> "lionstigersbears, oh my."
+test_04:
+std::unordered_map<std::string, std::string> tokens {
+  { "$A$", "lions"},
+  { "$B$", "tigers"},
+  { "$C$", "bears"}
+};
+tokenReplace("$B$", tokens); 
+// -> "tigers"
+test_05:
+std::unordered_map<std::string, std::string> tokens {
+  { "$second$", "beta"},
+  { "$first$", "alpha"},
+  { "$third$", "gamma"}
+};
+tokenReplace("$first$second$third$", tokens); 
+// -> "alphasecondgamma"
