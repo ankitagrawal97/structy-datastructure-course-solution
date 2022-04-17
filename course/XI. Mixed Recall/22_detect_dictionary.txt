@@ -1,0 +1,31 @@
+detect dictionary
+Write a function, detectDictionary, that takes in a dictionary of words and an alphabet string. The function should return a boolean indicating whether or not all words of the dictionary are lexically-ordered according to the alphabet.
+
+You can assume that all characters are lowercase a-z.
+
+You can assume that the alphabet contains all 26 letters.
+
+test_00:
+std::vector<std::string> dictionary { "zoo", "tick", "tack", "door" };
+std::string alphabet = "ghzstijbacdopnfklmeqrxyuvw";
+detectDictionary(dictionary, alphabet); // -> 1 (true)
+test_01:
+std::vector<std::string> dictionary { "zoo", "tack", "tick", "door" };
+std::string alphabet = "ghzstijbacdopnfklmeqrxyuvw";
+detectDictionary(dictionary, alphabet); // -> 0 (false)
+test_02:
+std::vector<std::string> dictionary { "zoos", "zoo", "tick", "tack", "door" };
+std::string alphabet = "ghzstijbacdopnfklmeqrxyuvw";
+detectDictionary(dictionary, alphabet); // -> 0 (false)
+test_03:
+std::vector<std::string> dictionary { "miles", "milestone", "proper", "process", "goal" };
+std::string alphabet = "mnoijpqrshkltabcdefguvwzxy";
+detectDictionary(dictionary, alphabet); // -> 1 (true)
+test_04:
+std::vector<std::string> dictionary { "miles", "milestone", "pint", "proper", "process", "goal" };
+std::string alphabet = "mnoijpqrshkltabcdefguvwzxy";
+detectDictionary(dictionary, alphabet); // -> 1 (true)
+test_05:
+std::vector<std::string> dictionary { "miles", "milestone", "pint", "proper", "process", "goal", "apple" };
+std::string alphabet = "mnoijpqrshkltabcdefguvwzxy";
+detectDictionary(dictionary, alphabet); // -> 0 (false)
