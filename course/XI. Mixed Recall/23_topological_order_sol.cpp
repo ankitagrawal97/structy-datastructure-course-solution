@@ -6,7 +6,7 @@ vector<string> topologicalOrder(unordered_map<string, vector<string>> graph) {
   //visiting parent before its childeren is topological order.
   //this order cannot be determined if there is a cycle in the graph
 
-  //making a map to store the count of children of each node
+  //making a map to store the count of parents of each node
   unordered_map<string,int> numParents;
   for(auto [node,children] : graph){
     if(numParents.count(node) == 0){
@@ -17,7 +17,7 @@ vector<string> topologicalOrder(unordered_map<string, vector<string>> graph) {
     }
   }
   //ready vetor
-  //nodes to pushed with 0 children
+  //nodes to pushed with 0 parents
   vector<string> ready;
   for(auto [node,num]: numParents){
     if(num==0){
@@ -26,8 +26,8 @@ vector<string> topologicalOrder(unordered_map<string, vector<string>> graph) {
   }
   vector<string> order;
   //remove the last element from ready vector , add it to order vector
-  //decrease the count of children of the removed element from the parent map
-  //if count of an  children becomes 0  then push it to ready vector
+  //decrease the count of parent of the removed element from the parent map
+  //if count of an  node becomes 0  then push it to ready vector
   while(ready.size()>0){
     string currentNode = ready.back();
     ready.pop_back();
